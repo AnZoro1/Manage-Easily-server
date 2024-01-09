@@ -5,16 +5,16 @@ const ObjectController = {
         try {
             const { name,
                 area,
-                floor,
-                adress,
+                floors,
+                address,
                 isRented,
                 rentalPrice,
                 owner } = req.body;
             const object = await Object.create({
                 name,
                 area,
-                floor,
-                adress,
+                floors,
+                address,
                 isRented,
                 rentalPrice,
                 owner

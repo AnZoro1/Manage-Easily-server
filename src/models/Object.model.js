@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 const objectSchema = mongoose.Schema({
     name: String,
-    area: Number,
+    area: String,
     floors: String,
-    adress: String,
+    address: String,
     isRented: Boolean,
-    rentalPrice: Number,
+    rentalPrice: String,
     owner: {
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Owner'

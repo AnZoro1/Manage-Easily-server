@@ -10,8 +10,6 @@ const OwnerController = {
             const { BCRYPT_ROUNDS } = process.env;
             const hash = await bcrypt.hash(password, Number(BCRYPT_ROUNDS));
 
-            console.log(ownerName, email, password, 'ownerName, email, password');
-
             const owner = await Owner.create({
                 ownerName,
                 email,
@@ -47,7 +45,7 @@ const OwnerController = {
             const token = await jwt.sign(payload, SECRET_JWT_KEY, {
                 expiresIn: '24'
             });
-            res.json(token);
+            res.json({ token: token, ownerId: candidate._id });
 
         } catch (e) {
             return res.json({ error: e.message });
